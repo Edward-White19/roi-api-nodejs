@@ -1,0 +1,6 @@
+#
+@PlaceholderAddress = https://jsonplaceholder.typicode.com
+
+### READ: Get users.
+GET {{PlaceholderAddress}}/posts HTTP/1.1
+###

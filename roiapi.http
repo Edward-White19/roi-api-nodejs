@@ -1,0 +1,47 @@
+# http://localhost:3000/api/people
+#   {httpMethod uri:port/extension httpVersion}
+@LocalHostAddress = http://localhost:3000
+
+### READ: Get all people.
+GET {{LocalHostAddress}}/api/people HTTP/1.1
+###
+
+### CREATE: Add new entry.
+POST {{LocalHostAddress}}/api/people HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Post Example",
+    "phone": "02 1234 1234",
+    "street": "12 ThreeFour Street",
+    "city": "OneTwo",
+    "state": "NSW",
+    "zip": "1234",
+    "country": "Australia",
+    "departmentId": 1
+}
+###
+
+### UPDATE: Edit entry.
+PUT {{LocalHostAddress}}/api/people/10 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Put Example",
+    "phone": "02 5678 5678",
+    "street": "56 SevenEight Street",
+    "city": "FiveSix",
+    "state": "NSW",
+    "zip": "5678",
+    "country": "Australia",
+    "departmentId": 3
+}
+###
+
+### READ: Retrieve person of ID = 6.
+GET {{LocalHostAddress}}/api/people/6 HTTP/1.1
+###
+
+### DELETE: Delete person if ID = 10.
+DELETE {{LocalHostAddress}}/api/people/10 HTTP/1.1
+###
